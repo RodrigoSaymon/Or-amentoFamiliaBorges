@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:projeto/editar.dart';
+
 import 'package:projeto/home.dart' as navegacao;
 
-
+import 'editar.dart';
+import 'outros.dart';
 
 void main() {
   runApp(const Rodrigo());
@@ -17,7 +20,12 @@ class Rodrigo extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const navegacao.Home(),
+      routes: {
+        '/': (_) => navegacao.Home(),
+        '/ editar': (_) => Editar(),
+        '/ outros': (_) => Outros(),
+      },
+      // home: const navegacao.Home(),
     );
   }
 }

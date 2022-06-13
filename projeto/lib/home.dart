@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/editar.dart';
-
+import 'package:projeto/outros.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -23,10 +23,10 @@ class Home extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            child:  Center(
-              child:  Text(
+            child: Center(
+              child: Text(
                 'Despesas Essenciais (50%)',
-                style:  TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                 ),
               ),
@@ -327,7 +327,14 @@ class Home extends StatelessWidget {
                   height: 60,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        settings: RouteSettings(name: 'Outros'),
+                        builder: (context) => Outros(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     'Anterior',
                     style: TextStyle(
