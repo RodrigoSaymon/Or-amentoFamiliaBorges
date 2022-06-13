@@ -1,30 +1,72 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'home.dart';
-
 final _form = GlobalKey<FormState>();
 final _valor = TextEditingController();
 double Quantidade = 5000;
 var moeda = 5;
-var context = null;
-
-comprar() {
-  if (_form.currentState!.validate()) {
-    // salvar a comprar
-    Navigator.pop(context);
-
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text('Atualizado com Sucesso!'),
-    ));
-  }
-}
 
 class Outros extends StatelessWidget {
   const Outros({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    comprar() {
+      if (_form.currentState!.validate()) {
+        Navigator.pop(context);
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Center(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Container(
+                color: Colors.green,
+                height: 100,
+                width: 600,
+
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.check,
+                        color: Colors.white,
+                        size: 50,
+                      ),
+                      Text(
+                        '     Com Sucesso',
+                        style: const TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                //  Container(
+                //   alignment: Alignment.center,
+                //   margin: EdgeInsets.only(top: 20),
+                //   color: Colors.teal,
+                //   height: 100,
+                //   width: 600,
+                //   child: Text(
+                //     'Atualizado com Sucesso!',
+                //     style: TextStyle(
+                //       fontSize: 25,
+                //       fontWeight: FontWeight.bold,
+                //       color: Colors.white,
+                //     ),
+                //   ),
+                // ),
+              ),
+            ),
+          )),
+        );
+      }
+    }
+
     // var moeda;
     return Scaffold(
       appBar: AppBar(
@@ -36,6 +78,7 @@ class Outros extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
+
             Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(color: Colors.teal.withOpacity(0.05)),
@@ -48,6 +91,18 @@ class Outros extends StatelessWidget {
                 ),
               ),
             ),
+            // Container(
+            //   alignment: Alignment.center,
+            //   decoration: BoxDecoration(color: Colors.teal.withOpacity(0.05)),
+            //   padding: EdgeInsets.all(12),
+            //   child: Text(
+            //     '$Quantidade',
+            //     style: const TextStyle(
+            //       fontSize: 20,
+            //       color: Colors.teal,
+            //     ),
+            //   ),
+            // ),
             const SizedBox(
               height: 10,
             ),
@@ -98,7 +153,7 @@ class Outros extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.check),
+                    Icon(Icons.check, size: 30),
                     Padding(
                       padding: EdgeInsets.all(16),
                       child: Text(

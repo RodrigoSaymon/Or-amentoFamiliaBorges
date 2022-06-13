@@ -25,6 +25,7 @@ class Rodrigo extends StatelessWidget {
         '/ editar': (_) => Editar(),
         '/ outros': (_) => Outros(),
       },
+
       // home: const navegacao.Home(),
     );
   }
