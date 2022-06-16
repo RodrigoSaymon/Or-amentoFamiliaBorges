@@ -43,54 +43,70 @@ class Home extends StatelessWidget {
             ),
             Image.asset('assets/imagens/200.gif'),
             SizedBox(
-              height: 200,
+              height: 300,
             ),
             Column(
               children: [
                 Container(
-                  color: Colors.teal,
+                  color: Colors.transparent,
                   alignment: Alignment.topRight,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              settings: RouteSettings(name: 'Outros'),
-                              builder: (context) => Outros(),
+                      Column(
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 150,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    settings: RouteSettings(name: 'Outros'),
+                                    builder: (context) => Outros(),
+                                  ),
+                                );
+                              },
+                              child: const Text(
+                                'Editar',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                ),
+                              ),
                             ),
-                          );
-                        },
-                        child: const Text(
-                          'Anterior',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
                           ),
-                        ),
+                        ],
                       ),
                       const SizedBox(
-                        width: 80,
+                        width: 50,
                         height: 50,
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              settings: RouteSettings(name: 'Cadastro'),
-                              builder: (context) => Editar(),
+                      Column(
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 150,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    settings: RouteSettings(name: 'Cadastro'),
+                                    builder: (context) => Editar(),
+                                  ),
+                                );
+                              },
+                              child: const Text(
+                                'Visualizar',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                ),
+                              ),
                             ),
-                          );
-                        },
-                        child: const Text(
-                          'Orçamento',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),
