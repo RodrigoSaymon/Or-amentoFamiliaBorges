@@ -12,7 +12,8 @@ class Outros extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     comprar() {
-      if (_form.currentState!.validate()) {
+      // if (_form.currentState.validate) {
+      if (_form.currentState!.validate) {
         Navigator.pop(context);
 
         ScaffoldMessenger.of(context).showSnackBar(

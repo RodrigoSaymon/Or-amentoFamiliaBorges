@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:projeto/editar.dart';
+import 'package:projeto/Orcamento.dart';
 
 import 'package:projeto/home.dart' as navegacao;
 
-import 'editar.dart';
-import 'outros.dart';
+import 'Orcamento.dart';
+import 'Cadastrar.dart';
 
 void main() {
   runApp(const Rodrigo());
@@ -18,7 +18,7 @@ class Rodrigo extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.teal,
       ),
       routes: {
         '/': (_) => navegacao.Home(),
