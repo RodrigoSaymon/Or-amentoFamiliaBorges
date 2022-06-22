@@ -315,8 +315,8 @@ class Home extends StatelessWidget {
         ),
         
         child: NavigationBar(
-          // selectedIndex:  ,
-          // onDestinationSelected: (int i)=> (() => pagina = i),
+          // selectedIndex: p ,
+          // onDestinationSelected: (int i)=> (() => p  = i),
           destinations: const [
           NavigationDestination(icon: Icon(Icons.abc_outlined, size: 30), 
           selectedIcon: Icon(Icons.abc), label: 'Orçamento'),
