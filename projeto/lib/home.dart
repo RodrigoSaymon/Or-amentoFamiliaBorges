@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:projeto/Orcamento.dart';
+import 'package:projeto/Editar.dart';
+import 'package:projeto/main.dart';
 
 import 'Cadastrar.dart';
 
@@ -10,11 +11,13 @@ import 'Cadastrar.dart';
 // var nome2 = cad;
 
 class Home extends StatelessWidget {
+
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+  
 
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +32,6 @@ class Home extends StatelessWidget {
         ],
         title: Row(
           children: const [
-          
             Text(
               'Orçamento na Mão',
               style: TextStyle(
@@ -47,79 +49,86 @@ class Home extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            InkWell( 
-              onTap: () {},
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed(Rodrigo.EDITAR);
+              },
               child: Container(
-                    height: 50,
-                    width: mediaQuery.size.width *.32,
-                    decoration: const BoxDecoration(color: Colors.black),
-                    margin: EdgeInsets.only(top: 2, bottom: 2, left: 2, right: 1),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                 Icon(Icons.arrow_back, size: 30),
-                 Text('Anterior', 
-                   style: TextStyle(
+                height: 50,
+                width: mediaQuery.size.width * .33,
+                decoration: const BoxDecoration(color: Colors.black),
+                // margin: EdgeInsets.only(top: 2, bottom: 2, left: 2, right: 1),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(Icons.arrow_back, size: 30),
+                    Text(
+                      'Anterior',
+                      style: TextStyle(
+                    fontWeight: FontWeight.bold,
                    fontSize: 20),
-                            ),
-                           ],
-                          ),
                     ),
+                  ],
+                ),
+              ),
             ),
-            InkWell( 
-              onTap: () {},
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed(Rodrigo.HOME);
+              },
               child: Container(
-                    height: 50,
-                    width: mediaQuery.size.width *.32,
-                    decoration: const BoxDecoration(color: Colors.black),
-                    
-                    margin: EdgeInsets.only(top: 2, bottom: 2, left: 1, right: 1),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                   Text('Página Atual', 
-                   style: TextStyle(
-                   fontSize: 20),
-                            ),
-                           ],
-                          ),
+                height: 50,
+                width: mediaQuery.size.width * .34,
+                decoration: const BoxDecoration(
+                  color: Colors.black,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(0, 5),
                     ),
+                  ],
+                ),
+                // margin: EdgeInsets.only(top: 2, bottom: 2, left: 1, right: 1),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      'Página Atual',
+                      style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                   fontSize: 20),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            InkWell( 
-              onTap: () {},
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed(Rodrigo.ORCAMENTO);
+              },
               child: Container(
-                
-                    height: 50,
-                    width: mediaQuery.size.width *.32,
-                    decoration: const BoxDecoration(color: Colors.black),
-                    margin: EdgeInsets.only(top: 2, bottom: 2, left: 1, right: 2),
-                    
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                 Text('Próximo', 
-                   style: TextStyle(
+                height: 50,
+                width: mediaQuery.size.width * .33,
+                decoration: const BoxDecoration(color: Colors.black),
+                // margin: EdgeInsets.only(top: 2, bottom: 2, left: 1, right: 2),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      'Próximo',
+                      style: TextStyle(
+                    fontWeight: FontWeight.bold,
                    fontSize: 20),
-                            ),
-                 Icon(Icons.arrow_forward, size: 30),
-                           ],
-                          ),
                     ),
+                    Icon(Icons.arrow_forward, size: 30),
+                  ],
+                ),
+              ),
             ),
-        ],     
+          ],
         ),
-
       ),
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
       // Center(
       //   child: Container(
       //     alignment: Alignment.center,
@@ -141,9 +150,9 @@ class Home extends StatelessWidget {
       //                     decoration: const BoxDecoration(color: Colors.red),
       //                     child: Row(
       //                       children: const [
-                       
+
       //                     Icon(Icons.arrow_back, size: 30),
-                            
+
       //                     Text(
       //                       'Anterior',
       //                       style: TextStyle(fontSize: 20),
@@ -184,8 +193,7 @@ class Home extends StatelessWidget {
       //                     child: Center(
       //                         child: Row(
       //                       children: const [
-                           
-                             
+
       //                         Center(
       //                           child: Text(
       //                             'Próximo',
@@ -295,6 +303,27 @@ class Home extends StatelessWidget {
       //       )
       //     ],
       //   ),
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+          backgroundColor: Colors.teal.withOpacity(0.1),
+          indicatorColor: Colors.black,
+          labelTextStyle: MaterialStateProperty.all(const TextStyle(
+            fontSize: 15, 
+            fontWeight: FontWeight.bold
+          )),
+        ),
+        
+        child: NavigationBar(
+          // selectedIndex:  ,
+          // onDestinationSelected: (int i)=> (() => pagina = i),
+          destinations: const [
+          NavigationDestination(icon: Icon(Icons.abc_outlined, size: 30), 
+          selectedIcon: Icon(Icons.abc), label: 'Orçamento'),
+          
+          NavigationDestination(icon: Icon(Icons.face_outlined, size: 30),
+          selectedIcon: Icon(Icons.face), label: 'Detalhes')
+        ]),
+      ),
     );
   }
 }
