@@ -115,6 +115,9 @@ class Editar extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            height: 5,
+          ),
           Container(
             child: Column(
               children: [
@@ -301,7 +304,7 @@ class Editar extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'Despesas Essenciais (50%)',
-                      style: TextStyle(fontSize: 20, color: Colors.black),
+                      style: TextStyle(fontSize: 20),
                     ),
                   ),
                   width: 410,
@@ -479,7 +482,7 @@ class Editar extends StatelessWidget {
                     child:  Text(
                       'Despesas Essenciais (50%)',
                       style: TextStyle(
-                        color: Colors.black,
+                        
                         fontSize: 20,
                       ),
                     ),

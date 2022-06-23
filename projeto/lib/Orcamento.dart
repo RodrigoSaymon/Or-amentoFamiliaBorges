@@ -119,10 +119,7 @@ class Orcamento extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-           child: Outros(),
-         
-      ),
+        
       ],
       ),
     );
