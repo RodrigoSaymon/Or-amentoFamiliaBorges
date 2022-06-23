@@ -5,6 +5,7 @@ import 'package:projeto/Editar.dart';
 import 'package:projeto/main.dart';
 
 import 'Cadastrar.dart';
+import 'MeuApp.dart';
 
 // final pessoa = Pessoa();
 // var cad = pessoa.cadastro();

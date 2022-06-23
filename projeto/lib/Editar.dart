@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/main.dart';
 
+import 'MeuApp.dart';
+
 class Editar extends StatelessWidget {
   const Editar({Key? key}) : super(key: key);
 
