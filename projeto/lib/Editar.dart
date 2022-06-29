@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:projeto/main.dart';
-
-import 'MeuApp.dart';
+import 'package:projeto/Botoes.dart';
+import 'package:projeto/Itens.dart';
+import 'package:projeto/Previsto.dart';
+import 'package:projeto/Saida.dart';
+import 'package:projeto/Titulo.dart';
+import 'package:projeto/cabecalho.dart';
+import 'package:projeto/total.dart';
 
 class Editar extends StatelessWidget {
   const Editar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -35,633 +37,65 @@ class Editar extends StatelessWidget {
       ),
       body: Column(
         children: [
+          Botoes(),
+          SizedBox(height: 5),
+          Titulo1(),
+          Cabecalho(),
+          Linha(),
+          const SizedBox(height: 5),
           Container(
-            height: 50,
-            width: mediaQuery.size.width,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).popAndPushNamed(Rodrigo.EDITAR);
-                  },
-                  child: Container(
-                    height: 50,
-                    width: mediaQuery.size.width * .33,
-                    decoration: const BoxDecoration(
-                      color: Colors.black,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.white,
-                          offset: Offset(0, 5),
-                        ),
-                      ],
-                    ),
-                    padding: EdgeInsets.only(bottom: 2),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.arrow_back, size: 30),
-                        Text(
-                          'Anterior',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).popAndPushNamed(Rodrigo.HOME);
-                  },
-                  child: Container(
-                    height: 50,
-                    width: mediaQuery.size.width * .34,
-                    decoration: const BoxDecoration(color: Colors.black),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'Página Atual',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).popAndPushNamed(Rodrigo.ORCAMENTO);
-                  },
-                  child: Container(
-                    height: 50,
-                    width: mediaQuery.size.width * .33,
-                    decoration: const BoxDecoration(
-                      color: Colors.black,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'Próximo',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                        Icon(Icons.arrow_forward, size: 30),
-                      ],
-                    ),
-                  ),
-                ),
+              children: const [
+                SizedBox(width: 20),
+                Itens(),
+                SizedBox(width: 80),
+                Previsto(),
+                SizedBox(width: 100),
+                Saida(),
+                SizedBox(height: 5),
               ],
             ),
           ),
-          SizedBox(
-            height: 5,
-          ),
+          Linha(),
+          Total(),
+          Titulo1(),
+          Cabecalho(),
+          Linha(),
+          const SizedBox(height: 5),
           Container(
-            child: Column(
-              children: [
-                Container(  
-                  child: Center(
-                    child: Text(
-                      'Despesas Essenciais (50%)',
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  width: 410,
-                  height: 30,
-                  decoration:
-                      BoxDecoration(color: Colors.teal.withOpacity(0.10)),
-                ),
-                Row(
-                  children: const [
-                    SizedBox(width: 20),
-                    Text(
-                      'Item',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 120),
-                    Text(
-                      'Previsto',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 40),
-                    Text(
-                      'Saída',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                Container(
-                  height: 2,
-                  width: 500,
-                  color: Colors.black,
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  child: Row(
-                    children: [
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const <Widget>[
-                            SizedBox(
-                              width: 140,
-                            ),
-                            Text(
-                              'Água',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Luz',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Escola',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Feira',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Transporte',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Rastreador',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 80),
-                      Container(
-                        child: Column(
-                          children: const <Widget>[
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 100),
-                      Container(
-                        child: Column(
-                          children: const <Widget>[
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-               const  SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  height: 2,
-                  width: 500,
-                  color: Colors.black,
-                ),
-                Row(
-                  children: const [
-                    SizedBox(width: 40),
-                    Text(
-                      'Total',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 143),
-                    Text(
-                      '0',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 97),
-                    Text(
-                      '0',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                Container(
-                  child: Center(
-                    child: Text(
-                      'Despesas Essenciais (50%)',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                  width: 410,
-                  height: 30,
-                  decoration:
-                      BoxDecoration(color: Colors.teal.withOpacity(0.10)),
-                ),
-                Row(
-                  children: const [
-                    SizedBox(width: 20),
-                    Text(
-                      'Item',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 120),
-                    Text(
-                      'Previsto',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 40),
-                    Text(
-                      'Saída',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                Container(
-                  height: 2,
-                  width: 500,
-                  color: Colors.black,
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  child: Row(
-                    children: [
-                     const  SizedBox(
-                        width: 20,
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const <Widget>[
-                            SizedBox(
-                              width: 140,
-                            ),
-                            Text(
-                              'Água',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Luz',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Escola',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Feira',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Transporte',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Rastreador',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ),
-                    const   SizedBox(width: 80),
-                      Container(
-                        child: Column(
-                          children: const <Widget>[
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 100),
-                      Container(
-                        child: Column(
-                          children: const <Widget>[
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-               const  SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  height: 2,
-                  width: 500,
-                  color: Colors.black,
-                ),
-                Row(
-                  children: const  [
-                     SizedBox(width: 40),
-                    Text(
-                      'Total',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 143),
-                    Text(
-                      '0',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 97),
-                    Text(
-                      '0',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                Container  (  
-                  child:   Center(
-                    child:  Text(
-                      'Despesas Essenciais (50%)',
-                      style: TextStyle(
-                        
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  width: 410,
-                  height: 30,
-                  decoration:
-                      BoxDecoration(color: Colors.teal.withOpacity(0.10)),
-                ),
-                Row(
-                  children: const [
-                    SizedBox(width: 20),
-                    Text(
-                      'Item',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 120),
-                    Text(
-                      'Previsto',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                     SizedBox(width: 40),
-                    Text(
-                      'Saída',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                Container(
-                  height: 2,
-                  width: 500,
-                  color: Colors.black,
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  child: Row(
-                    children: [
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const <Widget>[
-                            SizedBox(
-                              width: 140,
-                            ),
-                            Text(
-                              'Água',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Luz',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Escola',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Feira',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Transporte',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              'Rastreador',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 80),
-                      Container(
-                        child: Column(
-                          children: const <Widget>[
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 100),
-                      Container(
-                        child: Column(
-                          children: const <Widget>[
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  height: 2,
-                  width: 500,
-                  color: Colors.black,
-                ),
-                Row(
-                  children: const [
-                    SizedBox(width: 40),
-                    Text(
-                      'Total',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 143),
-                    Text(
-                      '0',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 97),
-                    Text(
-                      '0',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
+            child: Row(
+              children: const [
+                SizedBox(width: 20),
+                Itens(),
+                SizedBox(width: 80),
+                Previsto(),
+                SizedBox(width: 100),
+                Saida(),
+                SizedBox(height: 5),
               ],
             ),
           ),
+          Linha(),
+          Total(),
+          Titulo1(),
+          Cabecalho(),
+          Linha(),
+          const SizedBox(height: 5),
+          Container(
+            child: Row(
+              children: const [
+                SizedBox(width: 20),
+                Itens(),
+                SizedBox(width: 80),
+                Previsto(),
+                SizedBox(width: 100),
+                Saida(),
+                SizedBox(height: 5),
+              ],
+            ),
+          ),
+          Linha(),
+          Total(),
         ],
       ),
     );

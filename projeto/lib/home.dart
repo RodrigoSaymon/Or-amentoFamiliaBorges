@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:projeto/Botoes.dart';
 import 'package:projeto/Editar.dart';
 import 'package:projeto/main.dart';
 
@@ -43,93 +44,7 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
-        // color: Colors.black,
-        height: 50,
-        width: mediaQuery.size.width,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed(Rodrigo.EDITAR);
-              },
-              child: Container(
-                height: 50,
-                width: mediaQuery.size.width * .33,
-                decoration: const BoxDecoration(color: Colors.black),
-                // margin: EdgeInsets.only(top: 2, bottom: 2, left: 2, right: 1),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(Icons.arrow_back, size: 30),
-                    Text(
-                      'Anterior',
-                      style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                   fontSize: 20),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed(Rodrigo.HOME);
-              },
-              child: Container(
-                height: 50,
-                width: mediaQuery.size.width * .34,
-                decoration: const BoxDecoration(
-                  color: Colors.black,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: Offset(0, 5),
-                    ),
-                  ],
-                ),
-                // margin: EdgeInsets.only(top: 2, bottom: 2, left: 1, right: 1),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      'Página Atual',
-                      style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                   fontSize: 20),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed(Rodrigo.ORCAMENTO);
-              },
-              child: Container(
-                height: 50,
-                width: mediaQuery.size.width * .33,
-                decoration: const BoxDecoration(color: Colors.black),
-                // margin: EdgeInsets.only(top: 2, bottom: 2, left: 1, right: 2),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      'Próximo',
-                      style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                   fontSize: 20),
-                    ),
-                    Icon(Icons.arrow_forward, size: 30),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      body: Botoes(),
 
       // Center(
       //   child: Container(
@@ -305,27 +220,7 @@ class Home extends StatelessWidget {
       //       )
       //     ],
       //   ),
-      bottomNavigationBar: NavigationBarTheme(
-        data: NavigationBarThemeData(
-          backgroundColor: Colors.teal.withOpacity(0.1),
-          indicatorColor: Colors.black,
-          labelTextStyle: MaterialStateProperty.all(const TextStyle(
-            fontSize: 15, 
-            fontWeight: FontWeight.bold
-          )),
-        ),
-        
-        child: NavigationBar(
-          // selectedIndex: p ,
-          // onDestinationSelected: (int i)=> (() => p  = i),
-          destinations: const [
-          NavigationDestination(icon: Icon(Icons.abc_outlined, size: 30), 
-          selectedIcon: Icon(Icons.abc), label: 'Orçamento'),
-          
-          NavigationDestination(icon: Icon(Icons.face_outlined, size: 30),
-          selectedIcon: Icon(Icons.face), label: 'Detalhes')
-        ]),
-      ),
+      
     );
   }
 }

@@ -6,11 +6,14 @@ final _valor = TextEditingController();
 double Quantidade = 5000;
 var moeda = 5;
 
-class Outros extends StatelessWidget {
-  const Outros({Key? key}) : super(key: key);
+
+class Cadastro extends StatelessWidget {
+  const Cadastro({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+
     comprar() {
       // if (_form.currentState.validate) {
       if (_form.currentState!.validate) {
