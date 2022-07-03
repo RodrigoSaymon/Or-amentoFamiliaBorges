@@ -9,9 +9,10 @@ class Previsto extends StatelessWidget {
       child: Column(
         children: const <Widget>[
           Text(
-            '0',
-            style: TextStyle(fontSize: 20),
+            'Previsto',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
+           SizedBox(height: 5),
           Text(
             '0',
             style: TextStyle(fontSize: 20),
@@ -32,6 +33,15 @@ class Previsto extends StatelessWidget {
             '0',
             style: TextStyle(fontSize: 20),
           ),
+          Text(
+            '0',
+            style: TextStyle(fontSize: 20),
+          ),
+           SizedBox(height: 5),
+          Text(
+          '0',
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
         ],
       ),
     );

@@ -9,29 +9,30 @@ class Orcamento extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.more_vert,
-                size: 30,
-              )),
-        ],
-        title: Row(
-          children: const [
-            Text(
-              'Orçamento',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
-      body:  Botoes(),
-      );
+      // appBar: AppBar(
+      //   backgroundColor: Colors.black,
+      //   actions: [
+      //     IconButton(
+      //         onPressed: () {},
+      //         icon: const Icon(
+      //           Icons.more_vert,
+      //           size: 30,
+      //         )),
+      //   ],
+      //   title: Row(
+      //     children: const [
+      //       Text(
+      //         'Orçamento',
+      //         style: TextStyle(
+      //           fontSize: 25,
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      body:  Container(),
+      // Botoes(),
+     );
   }
 }

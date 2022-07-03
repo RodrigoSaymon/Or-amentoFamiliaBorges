@@ -12,90 +12,43 @@ class Editar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.more_vert,
-                size: 30,
-              )),
-        ],
-        title: Row(
-          children: const [
-            Text(
-              'Editar',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
       body: Column(
         children: [
-          Botoes(),
-          SizedBox(height: 5),
           Titulo1(),
-          Cabecalho(),
-          Linha(),
-          const SizedBox(height: 5),
           Container(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: const [
-                SizedBox(width: 20),
                 Itens(),
-                SizedBox(width: 80),
                 Previsto(),
-                SizedBox(width: 100),
                 Saida(),
-                SizedBox(height: 5),
               ],
             ),
           ),
-          Linha(),
-          Total(),
           Titulo1(),
-          Cabecalho(),
-          Linha(),
-          const SizedBox(height: 5),
           Container(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: const [
-                SizedBox(width: 20),
                 Itens(),
-                SizedBox(width: 80),
                 Previsto(),
-                SizedBox(width: 100),
                 Saida(),
-                SizedBox(height: 5),
               ],
             ),
           ),
-          Linha(),
-          Total(),
           Titulo1(),
-          Cabecalho(),
-          Linha(),
-          const SizedBox(height: 5),
           Container(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: const [
-                SizedBox(width: 20),
                 Itens(),
-                SizedBox(width: 80),
                 Previsto(),
-                SizedBox(width: 100),
                 Saida(),
-                SizedBox(height: 5),
               ],
             ),
           ),
-          Linha(),
-          Total(),
         ],
       ),
     );

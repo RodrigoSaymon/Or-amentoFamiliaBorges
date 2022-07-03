@@ -12,6 +12,11 @@ class Itens extends StatelessWidget {
           SizedBox(
             width: 140,
           ),
+            Text(
+            'Item',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+           SizedBox(height: 5),
           Text(
             'Água',
             style: TextStyle(fontSize: 20),
@@ -36,6 +41,11 @@ class Itens extends StatelessWidget {
             'Rastreador',
             style: TextStyle(fontSize: 20),
           ),
+           SizedBox(height: 5),
+           Text(
+          'Total',
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
         ],
       ),
     );
