@@ -5,19 +5,16 @@ import 'package:projeto/Itens.dart';
 
 class Titulo1 extends StatelessWidget {
   const Titulo1({Key? key}) : super(key: key);
-
-  
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    var nome = resposta().toString();
     return Container(
       child: Column(
         children: [
           Container(
-             child: Center(
-              child: Text(
+            child: Center(
+              child:
+               Text(
                 'Despesas Esseciais',
                 style: TextStyle(
                   fontSize: 20,
@@ -35,25 +32,83 @@ class Titulo1 extends StatelessWidget {
     );
   }
 }
-
-resposta() {
-  
+class Titulo2 extends StatelessWidget {
+  const Titulo2({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            child: Center(
+              child:
+               Text(
+                'Despesas Superfulas',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            width: mediaQuery.size.width,
+            height: 29,
+            decoration: BoxDecoration(
+              color: Colors.teal,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+class Titulo3 extends StatelessWidget {
+  const Titulo3({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            child:  Center(
+              child:
+               Text(
+                'Investimento',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            width: mediaQuery.size.width,
+            height: 29,
+            decoration: BoxDecoration(
+              color: Colors.teal,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
+
+
+
+
+
 class Resposta {
-  List<String> item = [
-    'Despesas Esseciais',
-    'Despesas Superfulas',
-    'Investimento'
-  ];
+  String? item;
+  String? iten1;
+  String? iten2;
+  String? iten3;
 
   String? resposta() {
     if (item == null) {
-      print(item[0]);
-    } else if (item == 'Despesas Esseciais') {
-      print(item[1]);
+      return item = 'Despesas Esseciais';
+    } else if (resposta() == 'Despesas Esseciais') {
+      return item = 'Despesas Superfulas';
     } else {
-      print(item[2]);
+      return item = 'Investimento';
     }
   }
 }

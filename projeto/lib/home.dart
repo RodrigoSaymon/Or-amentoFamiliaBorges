@@ -45,9 +45,9 @@ class Home extends StatelessWidget {
           Orcamento(),
           Editar(),
 
-          Center(child: Text('Tab 1 Contene'),),
+          // Center(child: Text('Tab 1 Contene'),),
           // Center(child: Text('Tab 2 Contene'),),
-          // Center(child: Text('Tab 3 Contene'),),
+          Center(child: Text('Tab 3 Contene'),),
         ]),
       ),
     );

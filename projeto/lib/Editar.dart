@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:projeto/Botoes.dart';
 import 'package:projeto/Itens.dart';
 import 'package:projeto/Previsto.dart';
 import 'package:projeto/Saida.dart';
 import 'package:projeto/Titulo.dart';
-import 'package:projeto/cabecalho.dart';
-import 'package:projeto/total.dart';
+
+import 'StatusBar.dart';
 
 class Editar extends StatelessWidget {
   const Editar({Key? key}) : super(key: key);
@@ -15,6 +14,7 @@ class Editar extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Titulo1(),
           Container(
@@ -27,28 +27,30 @@ class Editar extends StatelessWidget {
               ],
             ),
           ),
-          Titulo1(),
+          Titulo2(),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: const [
-                Itens(),
-                Previsto(),
-                Saida(),
+                Superflus(),
+                PrevistoSuperflu(),
+                SaidaSuperflu(),
               ],
             ),
           ),
-          Titulo1(),
+          Titulo3(),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: const [
-                Itens(),
-                Previsto(),
-                Saida(),
+                Investimentos(),
+                PrevistoInvestimento(),
+                SaidaInvestimento(),
               ],
             ),
           ),
+          SizedBox(height: 40),
+    
         ],
       ),
     );

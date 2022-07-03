@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/Botoes.dart';
 
+import 'Cadastrar.dart';
+
 class Orcamento extends StatelessWidget {
   const Orcamento({Key? key}) : super(key: key);
 
@@ -31,7 +33,9 @@ class Orcamento extends StatelessWidget {
       //     ],
       //   ),
       // ),
-      body:  Container(),
+      body:  Container(child:        
+        Cadastro(),
+      ),
       // Botoes(),
      );
   }

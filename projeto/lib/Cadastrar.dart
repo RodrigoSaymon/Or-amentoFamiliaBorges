@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-final _form = GlobalKey<FormState>();
-final _valor = TextEditingController();
-double Quantidade = 5000;
-var moeda = 5;
 
 
 class Cadastro extends StatelessWidget {
@@ -13,6 +9,10 @@ class Cadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+final _form = GlobalKey<FormState>();
+final _valor = TextEditingController();
+double Quantidade = 5000;
+var moeda = 5;
 
     comprar() {
       // if (_form.currentState.validate) {
@@ -33,7 +33,7 @@ class Cadastro extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Icon(
                         Icons.check,
                         color: Colors.white,
@@ -41,7 +41,7 @@ class Cadastro extends StatelessWidget {
                       ),
                       Text(
                         '     Com Sucesso',
-                        style: const TextStyle(
+                        style:  TextStyle(
                           fontSize: 20,
                           color: Colors.white,
                         ),
@@ -73,9 +73,9 @@ class Cadastro extends StatelessWidget {
 
     // var moeda;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Outros'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Outros'),
+      // ),
       body: Center(
         child: Column(
           children: [
